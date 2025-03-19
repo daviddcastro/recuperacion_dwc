@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Actividad 4.16</title>
+  </head>
+  <body>
+    <style>
+      h1 {
+        text-align: center;
+        font-weight: bold;
+      }
+
+      .container {
+        background-color: lightblue;
+        width: 40%;
+        margin: auto;
+        padding: 4rem;
+        border: 1px solid black;
+      }
+
+      form {
+        margin: auto;
+        width: 40%;
+        text-align: center;
+        margin-top: 2rem;
+      }
+    </style>
+
+    <h1>Modificación de tamaño de texto</h1>
+
+    <div class="container">
+      <p class="parrafo">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, dolorum
+        provident commodi inventore quibusdam vel accusantium itaque, voluptatem
+        reiciendis quisquam veritatis alias voluptates. 
+      </p>
+      <p class="parrafo">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, dolorum
+        provident commodi inventore quibusdam vel accusantium itaque, voluptatem
+        reiciendis quisquam veritatis alias voluptates. 
+      </p>
+      <p class="parrafo">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, dolorum
+        provident commodi inventore quibusdam vel accusantium itaque, voluptatem
+        reiciendis quisquam veritatis alias voluptates. 
+      </p>
+    </div>
+    <form action="" method="post">
+      Seleccionar tamaño:
+      <select name="tipoLetra" id="fschanger">
+        <option value="small">Small</option>
+        <option value="medium">Medium</option>
+        <option value="big">Big</option>
+      </select>
+      <input type="button" value="Cambiar" onclick="cambiarFS();" />
+    </form>
+
+    <script>
+      function cambiarFS() {
+        let fs = document.getElementById("fschanger").value;
+        let parrafos = document.querySelectorAll(".parrafo");
+
+        parrafos.forEach(function (parrafo) {
+          if (fs === "small") {
+            parrafo.style.fontSize = "10px";
+          } else if (fs === "medium") {
+            parrafo.style.fontSize = "20px";
+          } else if (fs === "big") {
+            parrafo.style.fontSize = "30px";
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
