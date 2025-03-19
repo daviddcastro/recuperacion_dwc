@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad 4.10</title>
+</head>
+<body>
+    <style>
+        h1 {
+            text-align: center;
+            font-weight: bold;
+        }
+
+        #container {
+            background-color: lightblue;
+            text-align: center;
+            width: 40%;
+            margin: auto;
+        }
+
+        .botones {
+            margin: auto;
+            width: 40%;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .boton {
+            padding: 1rem;
+            border: 1px solid black;
+            background-color: bisque;
+        }
+
+        p {
+            padding: 0.5rem;
+        }
+    </style>
+    <h1>Lista de Párrafos</h1>
+
+    <div id="container">
+
+    </div>
+
+    <div class="botones">
+        <input class="boton" type="button" onclick="crearParrafoDOM();" value="Añadir párrafo (DOM)"></input>
+        <input class="boton" type="button" onclick="crearParrafoHTML();" value="Añadir párrafo (HTMl)"></input>
+    </div>
+
+    <script>
+        let contador = 0;
+
+        function crearParrafoDOM() {
+            contador++;
+
+            let parrafo = document.createElement('p');
+            let texto = document.createTextNode(`Párrafo ${contador}`);
+
+            parrafo.appendChild(texto);
+
+            let ubicacion = document.getElementById('container');
+            ubicacion.appendChild(parrafo);
+        }
+
+        function crearParrafoHTML() {
+            contador++;
+
+            let parrafo = document.createElement('p');
+            parrafo.innerHTML = `Párrafo ${contador}`;
+
+            let ubicacion = document.getElementById('container');
+            ubicacion.appendChild(parrafo);
+        }
+    </script>
+</body>
+</html>
