@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Actividad 4.22</title>
+  </head>
+  <body>
+    <style>
+      .container {
+        background-color: lightblue;
+        width: 40%;
+        margin: auto;
+        padding: 2rem;
+        border: 1px solid black;
+        font-size: 1.4rem;
+      }
+
+      form {
+        width: 50%;
+        margin: auto;
+        display: flex;
+        justify-content: space-around;
+      }
+
+      label {
+        font-weight: bold;
+      }
+
+      .boton {
+        border: 1px solid black;
+        background-color: bisque;
+      }
+    </style>
+
+    <div class="container">
+      <h1>Lista dinámica:</h1>
+      <ul id="lista">
+        <li>Sevilla FC</li>
+        <li>Real Madrid</li>
+        <li>FC Barcelona</li>
+      </ul>
+    </div>
+
+    <hr />
+
+    <form action="" method="post">
+      <label for="">Nuevo equipo: </label>
+      <input type="text" id="equipo" />
+      <input
+        class="boton"
+        type="button"
+        onclick="insert();"
+        value="Añadir con InsertAdjacentHTML"
+      />
+      <input
+        class="boton"
+        type="button"
+        onclick="create();"
+        value="Añadir con createElement"
+      />
+    </form>
+
+    <script>
+      function insert() {
+        let lista = document.getElementById("lista");
+        let equipo = document.getElementById("equipo").value;
+
+        lista.insertAdjacentHTML("beforeend", "<li>" + equipo + "</li>");
+      }
+
+      function create() {
+        let lista = document.getElementById("lista");
+        let equipo = document.getElementById("equipo").value;
+
+        let parrafo = document.createElement("li");
+        parrafo.appendChild(document.createTextNode(equipo));
+        
+        lista.appendChild(parrafo);
+      }
+    </script>
+  </body>
+</html>
