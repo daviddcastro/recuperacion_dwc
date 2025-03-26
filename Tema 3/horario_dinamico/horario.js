@@ -158,7 +158,7 @@ function obtenerTramoHorario(id) {
   } else {
     for (let index = 0; index < tramos.length; index++) {
       if (tramos[index].id == id) {
-        return tramos[index].hora + '<br>' + tramos[index].descripcion;
+        return tramos[index].hora + "<br>" + tramos[index].descripcion;
       }
     }
   }
@@ -178,17 +178,17 @@ function obtenerDiaSemana(id) {
 }
 
 function obtenerGrupo(idAsignatura) {
-    if (idAsignatura < 1 || idAsignatura > 9) {
-      console.log("ID incorrecto.");
-      return null;
-    } else {
-      for (let index = 0; index < dias.length; index++) {
-        if (asignaturas[index].id == idAsignatura) {
-          return asignaturas[index].grupo;
-        }
+  if (idAsignatura < 1 || idAsignatura > 9) {
+    console.log("ID incorrecto.");
+    return null;
+  } else {
+    for (let index = 0; index < dias.length; index++) {
+      if (asignaturas[index].id == idAsignatura) {
+        return asignaturas[index].grupo;
       }
     }
   }
+}
 
 console.log(obtenerAsignaturas(6));
 console.log(obtenerTramoHorario(3));
@@ -196,30 +196,43 @@ console.log(obtenerDiaSemana(3));
 console.log(obtenerAula(3));
 
 function crearHorario() {
-    let tabla = document.getElementById("horario");
-    tabla.innerHTML = ''; 
+  let tabla = document.getElementById("horario");
+  tabla.innerHTML = "";
 
-    let header = '<tr>';
-    dias.forEach(dia => {
-        header += `<th>${dia.nombre}</th>`;
-    });
-    header += '</tr>';
-    tabla.innerHTML += header;
+  let header = "<tr>";
+  dias.forEach((dia) => {
+    header += `<th>${dia.nombre}</th>`;
+  });
+  header += "</tr>";
+  tabla.innerHTML += header;
 
-    for (let i = 0; i < horario.length; i++) {
-        let fila = '<tr>';
+  for (let i = 0; i < horario.length; i++) {
+    let fila = "<tr>";
 
-        fila += `<td>${obtenerTramoHorario(horario[i].idTramo)}</td>`;
+    fila += `<td>${obtenerTramoHorario(horario[i].idTramo)}</td>`;
 
-        for (let j = 0; j < dias.length; j++) {
-            let asignaturaId = horario[i].asignaturas[j].idAsignatura;
-            let asignatura = obtenerAsignaturas(asignaturaId);
-            let color = asignaturas.find(a => a.id === asignaturaId)?.color || 'white';
-            fila += `<td style="background-color:${color};">${asignatura}<br>${obtenerGrupo(asignaturaId)}</td>`;
+    for (let j = 0; j < dias.length; j++) {
+      let asignaturaId = horario[i].asignaturas[j].idAsignatura;
+      let asignatura = obtenerAsignaturas(asignaturaId);
+      let color = "white";
+      for (let i = 0; i < asignaturas.length; i++) {
+        if (asignaturas[i].id === asignaturaId) {
+          color = asignaturas[i].color;
+          break;
         }
-
-        fila += '</tr>';
-        tabla.innerHTML += fila;
+      }
+      fila += `<td style="background-color:${color};">${asignatura}<br>${obtenerGrupo(
+        asignaturaId
+      )}</td>`;
     }
+
+    fila += "</tr>";
+    tabla.innerHTML += fila;
+  }
 }
 
+function mostrarAula(idAsignatura) {
+  let cuadro = document.getElementById('aula');
+
+  cuadro.innerHTML = asignaturas[idAsignatura].aula;
+}

@@ -17,3 +17,7 @@ const PRODUCTOS = [
 
 
 // Escribe aquí tu código
+
+function mostrarProducto() {
+	
+}
