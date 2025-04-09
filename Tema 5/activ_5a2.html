@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f2f5;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h2 {
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    label {
+      font-size: 18px;
+      margin-right: 10px;
+    }
+
+    input[type="text"] {
+      padding: 8px 12px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      width: 200px;
+      transition: border-color 0.3s ease;
+    }
+
+    input[type="text"]:focus {
+      border-color: #007bff;
+      outline: none;
+    }
+
+    #saludo {
+      margin-top: 30px;
+      font-size: 24px;
+      color: #007bff;
+    }
+  </style>
+  <body>
+    <!-- Crea un cuadro de texto de manera que conforme escribamos en dicho control
+    se muestre en tiempo real el contenido en un párrafo que ponga el mensaje
+    “Hola” más el texto del cuadro de texto. -->
+    <h2>Evento</h2>
+
+    <label for="">Nombre: </label>
+    <input type="text" id="nombre" />
+
+    <h3 id="saludo">Hola</h3>
+
+    <script>
+      const nombre = document.getElementById("nombre");
+      const saludo = document.getElementById("saludo");
+
+      nombre.addEventListener("input", function () {
+        saludo.textContent = "Hola " + nombre.value;
+      });
+    </script>
+  </body>
+</html>
