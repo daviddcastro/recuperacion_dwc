@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Crea una función llamada validaNumerosSeparados(dato) que tenga un argumento
+    de entrada de tipo string y valide si dicho dato tiene el formato de tres
+    números del 0 al 9 separados por un guión “-” o por un punto “.” Aunque el
+    separador entre los número puede ser el guión o el punto debe usarse el
+    mismo (por ejemplo, serían válidos “3-8-5” y “3.8.5” pero no sería válido
+    “3.8-5” o “3-8.5” porque se ha mezclado el tipo de separador). Observación:
+    para resolver este ejercicio investiga en qué consiste el capturing en los
+    subpatrones de las expresiones regulares -->
+
+    <script>
+      function validaNumerosSeparados(dato) {
+        let exp = /^\d(\.|-)\d\1\d$/;
+
+        if (exp.test(dato)) {
+          alert("Numeros separados correctamente");
+        } else {
+          alert("Numeros separados erroneamente");
+        }
+      }
+    </script>
+  </body>
+</html>
