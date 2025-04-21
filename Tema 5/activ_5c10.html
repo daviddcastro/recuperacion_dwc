@@ -20,9 +20,9 @@
 
     <script>
         function extraeExpresionesMatemáticas(dato) {
-            const exp = /{}/;
-
-            
+            const exp = /\{.*?\}/g;
+            const resultado = dato.match(exp);
+            return resultado;
         }
     </script>
   </body>
