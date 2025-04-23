@@ -12,6 +12,12 @@
     separador decimal(por ejemplo se consideran válidos: “123”, “-25,09”,
     “+0,23”). Haz un testeo de la función. -->
 
-    
+    <script>
+      function validaNumeroDecimal(dato) {
+        let exp = /^[\+\-]?[0-9]+,[0-9]+$/;
+
+        return exp.test(dato);
+      }
+    </script>
   </body>
 </html>
