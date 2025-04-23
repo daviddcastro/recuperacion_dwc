@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Crea una función llamada validaCP que valide si un código postal es válido,
+    retornando true en caso afirmativo. El código postal podrá tener
+    opcionalmente espacios por delante o por detrás. Haz un testeo de la
+    función. 
+
+    Crea una función llamada extraeCPs que tenga como argumento de
+    entrada una frase que contenga códigos postales. La función debe devolver un
+    array con todos los códigos postales encontrados. Haz un testeo de la
+    función.
+
+    Crea una función llamada sustituyeCPs que tenga como argumento de
+    entrada una frase que contenga códigos postales. La función debe devolver la
+    frase de entrada sustituyendo todos los códigos postales por la palabra C.P.
+    Haz un testeo de la función. -->
+
+    <script>
+        function validaCP(dato) {
+            let exp = /^\d{5}$/;
+
+            if (exp.test(dato)) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        function extraeCps(dato) {
+            
+        }
+    </script>
+  </body>
+</html>
