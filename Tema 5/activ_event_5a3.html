@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Crea una lista desplegable que contenga las localidades “Utrera”, “Los
+    Palacios” y “Dos Hermanas”. Cuando el usuario seleccione una localidad debe
+    mostrarse junto al control la localidad que ha seleccionado en el
+    desplegable. -->
+
+    <form action="">
+        <label for="">Localidad: </label>
+        <select name="localidad" id="localidad">
+            <option value="Utrera">Utrera</option>
+            <option value="Palacios">Palacios</option>
+            <option value="Dos Hermanas">Dos Hermanas</option>
+        </select>
+    </form>
+    <span>Localidad seleccionada: </span>
+    <span id="ax"></span>
+
+    <script>
+        function inicio() {
+            document.getElementById('localidad').addEventListener('click', manejadorEventos);
+        }
+
+        function manejadorEventos(evt) {
+            let txt = document.getElementById('ax');
+            txt.innerHTML = evt.target.value;
+        }
+
+        addEventListener('load', inicio);
+    </script>
+  </body>
+</html>
