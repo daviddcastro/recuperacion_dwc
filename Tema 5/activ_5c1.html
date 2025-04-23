@@ -33,7 +33,17 @@
         }
 
         function extraeCps(dato) {
+            let exp = /\d{5}/g;
+            let res = dato.match(exp);
             
+            return res;
+        }
+
+        function sustituyeCPs(dato) {
+            let exp = /\b\d{5}\b/g;
+            let res = dato.replace(exp, "C.P");
+
+            return res;
         }
     </script>
   </body>
