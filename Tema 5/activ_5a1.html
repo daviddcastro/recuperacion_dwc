@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    div {
+        border: 2px solid black;
+        max-width: 400px;
+        text-align: center;
+        margin-top: 10px;
+    }
+  </style>
+  <body>
+    <!-- Crea un formulario que tenga dos botones con id boton1 y boton2
+    respectivamente. Crea también dos div con id div1 div2. Haz que los
+    siguientes eventos tengan un único manejador de eventos llamado
+    manejadorEventos: Clic sobre boton1 Clic sobre boton2 Ratón entra dentro de
+    div1 Ratón entra dentro de div2 En dicho manejador de eventos escribe el
+    código necesario para que en la consola se muestre el objeto que ha generado
+    el evento así como el tipo de evento (click o mouseenter). -->
+    
+    <h1>Manejador de eventos compartidos</h1>
+
+    <form action="" method="post">
+        <input type="button" value="Boton1" id="boton1">
+        <input type="button" value="Boton2" id="boton2">
+    </form>
+
+    <div id="div1">
+        <p>Hola</p>
+        <p>Div 1</p>
+    </div>
+
+    <div id="div2">
+        <p>Hola</p>
+        <p>Div 2</p>
+    </div>
+
+    <script>
+        function inicio() {
+            document.getElementById('boton1').addEventListener('click', manejadorEventos);
+            document.getElementById('boton2').addEventListener('click', manejadorEventos);
+            document.getElementById('div1').addEventListener('mouseenter', manejadorEventos);
+            document.getElementById('div2').addEventListener('mouseenter', manejadorEventos);
+        }
+
+        function manejadorEventos(evt) {
+            let control = evt.target;
+            let tipo = evt.type;
+
+            if (tipo === 'click') {
+                console.log('Click sobre ' + control.value);
+            } else {
+                console.log('Raton entra dentro de ' + control.id);
+            }
+        }
+
+        addEventListener('load', inicio);
+    </script>
+  </body>
+</html>
