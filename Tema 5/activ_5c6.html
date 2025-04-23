@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Crea una función llamada validaHora que valide si un string que representa
+    una hora con el formato hh:mm:ss usando la representación de 24 horas. Haz
+    un testeo de la función. -->
+
+    <script>
+      function validaHora(dato) {
+        const exp = /^(0[0-9]|1[0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9])$/;
+        return exp.test(dato);
+      }
+    </script>
+  </body>
+</html>

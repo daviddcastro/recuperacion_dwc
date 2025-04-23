@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Crea una función llamada extraerPosicionesEmails que tenga como argumento de
+    entrada un texto (dato string) y devuelva un vector con todas las posiciones
+    en que se haya encontrado un emails en el texto de entrada. Para validar un
+    email utiliza la siguiente expresión regular:
+    /\w+@([a-zA-Z_]+\.)+[a-zA-Z]{2,6}/ Haz un testeo de la función. -->
+
+    <script>
+      function extraerPosicionesEmails(dato) {
+        const exp = /\w+@([a-zA-Z_]+\.)+[a-zA-Z]{2,6}/;
+        const resultado = dato.match(exp);
+        return resultado;
+      }
+    </script>
+  </body>
+</html>
